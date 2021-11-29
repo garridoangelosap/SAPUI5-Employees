@@ -1,0 +1,73 @@
+/* =============================================================== */
+/* CSS for control "sap.ushell.ui.tile.TileBase" (sap_fiori_3_hcw) */
+/* =============================================================== */
+
+.sapUiMedia-Std-Desktop .sapUshellTileBase:hover .sapMBtnInner {
+  box-shadow: inset 0 @sapUshellTwoPixels 0 0 @sapUiLightShadowTint;
+}
+
+.sapUshellTileBase {
+  box-shadow: none;
+  color: @sapUiHcStandardForeground;
+
+  &:hover, &:active {
+    box-shadow: 0 0 0 @sapUshellTwoPixels @sapUiContentShadowColor;
+  }
+
+  &:focus {
+    outline: 0.2rem dotted @sapUiHcStandardForeground;
+    outline-offset: 0.125rem;
+  }
+
+  .sapUshellTileBaseNeutral { color: @sapUiHcNeutralColor; }
+  .sapUshellTileBasePositive { color: @sapUiHcPositiveColor; }
+
+  .sapUshellTileBaseTitle {
+    font-weight: @sapUshellTileBaseTitleFontWeight;
+    font-family: @sapUshellTileBaseTitleFontFamily;
+    font-size: @sapUshellTileBaseTitleFontSizeDesktop;
+
+    b { font-weight: inherit; }
+  }
+
+  .sapUshellTileBaseSubtitle {
+    font-weight: @sapUshellTileBaseSubtitleFontWeight;
+    font-family: @sapUshellTileBaseSubtitleFontFamily;
+    font-size: @sapUshellTileBaseSubtitleFontSizeDesktop;
+
+    b { font-weight: inherit; }
+  }
+
+  .sapUshellTileBaseIcon {
+    font-size: @sapUshellTileBaseIconFontSizeDesktop;
+  }
+
+  .sapUshellTileBaseInfo {
+    font-weight: @sapUshellTileBaseBottomLineFontWeight;
+    font-family: @sapUshellTileBaseBottomLineFontFamily;
+    font-size: @sapUshellTileBaseBottomLineFontSizeDesktop;
+
+    &.sapUshellTileBaseNeutral { color: @sapUiHcNeutralColor; }
+    &.sapUshellTileBasePositive { color: @sapUiHcPositiveColor; }
+
+    b { font-weight: inherit; }
+  }
+}
+
+.sapUiMedia-Std-Phone .sapUshellTileBase {
+  .sapUshellTileBaseTitle {
+    font-size: @sapUshellTileBaseTitleFontSizePhone;
+  }
+
+  .sapUshellTileBaseSubtitle {
+    font-size: @sapUshellTileBaseSubtitleFontSizePhone;
+  }
+
+  .sapUshellTileBaseIcon {
+    font-size: @sapUshellTileBaseIconFontSizePhone;
+  }
+
+  .sapUshellTileBaseInfo {
+    font-size: @sapUshellTileBaseBottomLineFontSizePhone;
+  }
+}

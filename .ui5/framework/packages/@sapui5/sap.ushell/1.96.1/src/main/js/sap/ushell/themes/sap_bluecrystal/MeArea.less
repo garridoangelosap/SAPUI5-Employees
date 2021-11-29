@@ -1,0 +1,37 @@
+/* BLUECRYSTAL */
+
+/* =============================================================== */
+/* Styles for the "ME area"                              */
+/* =============================================================== */
+
+/* LESS Variables */
+/* ============================================= */
+@sapUshellLogoutButtonColor: fade(@sapUiInvertedElement, 50); //rgba(255, 255, 255, 0.5);
+@sapUshellLogoutButtonHoverColor: @sapUiInvertedElement;
+@sapUshellMeAreaButtonBGHoverColor: fade(@sapUiInvertedElement, 30);//rgba(255, 255, 255, 0.3);
+@sapUshellUserNameFGColor: @sapUiInvertedElement;
+@sapUshellUserImageBorderColor: fade(@sapUiInvertedElement, 20);//rgba(255,255,255,0.2);
+
+/* Styles */
+/* ============================================= */
+
+.sapUshellLogoutButton {
+  color: @sapUshellLogoutButtonColor;
+  background-color: transparent;
+
+  &:hover {
+    background-color: @sapUshellMeAreaButtonBGHoverColor;
+    color: @sapUshellLogoutButtonHoverColor;
+
+    span.sapUiIcon {
+      color: @sapUshellLogoutButtonHoverColor;
+    }
+  }
+}
+.sapUshellLogoutButton div {
+  font-size: 1rem;
+}
+.sapUshellLogoutButton span.sapUiIcon {
+  color: @sapUshellLogoutButtonColor;
+  font-size: 0.75rem;
+}

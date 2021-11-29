@@ -1,0 +1,25 @@
+/* General Plus Tile */
+@sapUshellPlusTileBoxColorBackground: fade(@sapShell_Background,0);
+@sapUshellPlusTileBoxBorderColor: @sapUiMediumBorder;
+
+@sapUshellPlusTileIconColor: fade(@sapUiHcStandardForeground,100);
+@sapUshellPlusTileIconColorHover: fade(@sapUiHcStandardForeground,100);
+
+.sapUshellTile.sapUshellPlusTile {
+
+    background-color: @sapUshellPlusTileBoxColorBackground;
+    border-color: @sapUiTileBorderColor;
+
+    &:hover {
+      box-shadow: 0 0 0 @sapUshellOnePixel @sapUiTileBorderColor;
+    }
+
+    &:hover .sapUiIcon {
+        color: @sapUiTileIconColor;
+    }
+
+    .sapUiIcon {
+        color: @sapUiTileIconColor;
+        font-size: @sapUshellPlusTileIconFontSize;
+    }
+}

@@ -1,0 +1,128 @@
+/* ================================================================================ */
+/* CSS for control "sap.ushell.components.shell.Notifications.Notifications" (base) */
+/* ================================================================================ */
+
+@sapUshellNotificationsLeftPaddingTiny: 1rem;
+@sapUshellNotificationsLeftPaddingMedium: 6rem;
+@sapUshellNotificationsLeftPaddingLarge: 9rem;
+
+.sapUshellNotificationsList {
+  height: 100%;
+  margin-top: 0;
+}
+
+.sapMLIB.sapMNLI.sapUshellNotificationsListItem {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sapUshellNotificationsView {
+  box-sizing: border-box;
+  height: 100%;
+  padding-left: @sapUshellNotificationsLeftPaddingTiny;
+
+  @media @query-size-min-600 {
+    padding-left: @sapUshellNotificationsLeftPaddingMedium;
+  }
+
+  @media @query-size-min-1440 {
+    padding-left: @sapUshellNotificationsLeftPaddingLarge;
+  }
+}
+
+.sapUshellNonAnimatedNotificationListItem {
+  max-height: 31.2rem;
+  transform: translateX(0rem) translateZ(0);
+  width: 20rem;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: transform 0ms cubic-bezier(.78, -0.35, .46, .95);
+}
+
+.sapUshellNotificationsMoreCircle {
+  text-align: center;
+  min-width: 4.5rem;
+  height: 4.5rem;
+  padding-top: 0.938rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 100%;
+  font-family: @sapUiFontFamily;
+  font-size: @sapMFontMediumSize;
+}
+
+.sapUshellNotificationsMoreCircleCount {
+  font-family: @sapUiFontFamily;
+  font-size: @sapMFontHeader2Size;
+  font-weight: @sapUiFontHeaderWeight;
+}
+
+.sapUshellNotificationsMoreHelpingText {
+  font-family: @sapUiFontFamily;
+  font-size: @sapMFontMediumSize;
+}
+
+.sapUshellNotificationsMoreVBox {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* to support proper appearance on safari browser */
+  text-align: center;
+  align-items: center;
+
+  .sapMFlexItem {
+    margin: auto;
+  }
+
+  .sapUshellNotificationsMoreCircle.sapMFlexItem {
+    margin-bottom: 1rem;
+  }
+}
+
+.sapUshellNotificationsPopup {
+  .sapMPopoverCont {
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .sapUshellNotificationsView {
+    padding: 0;
+  }
+
+  .sapMITBHead {
+    margin: 0;
+  }
+
+  .sapMITBContainerContent {
+    border: 0; /* removes duplicate border on HC themes */
+  }
+
+  .sapMITBContent {
+    border-bottom: none;
+  }
+
+  #shellNotificationsPopover-scroll {
+    overflow: hidden;
+  }
+
+  #notificationsView--notificationIconTabBar .sapMITBNotScrollable {
+    margin: 0;
+  }
+
+  #notificationsView--notificationIconTabBar-content {
+    margin: 0 0.5rem 0 0;
+  }
+
+  /* popover width is fixed in fiori3 */
+  @media @query-size-min-600 {
+    #notificationsView--notificationIconTabBar-content {
+      width: 28.5rem;
+    }
+  }
+}
+
+/* workaround for the un-rendered content after scroll in iOS */
+.sap-ios #shellNotificationsPopover-scroll {
+  transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,72 @@
+/* =============================================== */
+/* Shared styles for all other CSS of this library */
+/* =============================================== */
+
+@sapUshellOnePixel: 1px;
+@sapUshellTwoPixels: 0.125rem;
+
+/* Media queries for screen sizes */
+/* - see also "sap.ui.Device.media.RANGESETS" from UI5 */
+/* - see also "visualcore" wiki pages 2108063887 and 2301977304 */
+/* - see also "Acc" wiki page 2162143001 */
+@query-size-min-375:  ~"(min-width:  375px)"; /* Tile breakpoint for "sapMTileSmallPhone" (default UI5 behavior) */
+@query-size-min-600:  ~"(min-width:  600px)"; /* 1st responsive breakpoint (default UI5 behavior) */
+@query-size-min-1024: ~"(min-width: 1024px)";
+@query-size-min-1280: ~"(min-width: 1280px)";
+@query-size-min-1440: ~"(min-width: 1440px)"; /* 2nd responsive breakpoint (default UI5 behavior) */
+@query-size-min-1600: ~"(min-width: 1600px)";
+@query-size-min-1920: ~"(min-width: 1920px)";
+
+/* In order to override any unwanted scrolling, overflow should be hidden */
+html {
+  overflow: hidden;
+}
+
+/* Shared between ShellLayout and ShellHeader */
+@sapUshellShellHeaderBarHeight: 2.75rem;
+@sapUshellShellHeadHeight: @sapUshellShellHeaderBarHeight;
+@sapUshellCoPilotDockingWidth: 26rem;
+
+/* For cross-browser compatible animations */
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opacity_percent: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opacity_percent})";
+  filter: ~"alpha(opacity=@{opacity_percent})";
+}
+
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+.transition(...) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  -ms-transition: @arguments;
+  transition: @arguments;
+}
+
+.sapUshellIframeDialog .sapMDialogScrollCont {
+  height: 100%;
+}
+
+.sapUShellFullHeight {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.sapUshellFullWidth {
+  width: 100%
+}
+
+.sapUshellZeroOpacity {
+  opacity: 0;
+}

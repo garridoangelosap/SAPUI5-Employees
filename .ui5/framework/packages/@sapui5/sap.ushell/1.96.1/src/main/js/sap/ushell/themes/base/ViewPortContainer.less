@@ -1,0 +1,47 @@
+/* LESS Variables */
+/* ============================================= */
+    @sapUshellViewPortFullWidth: 100%;
+
+    @sapUshellLeftViewPortWidthXS: 36rem;
+    @sapUshellLeftViewPortWidthS: 39rem;
+    @sapUshellLeftViewPortWidthM: 47rem;
+    @sapUshellLeftViewPortWidthL: 50rem;
+
+    @sapUshellRightViewPortWidthXS: 39rem;
+    @sapUshellRightViewPortWidthS: 49rem;
+    @sapUshellRightViewPortWidthM: 55rem;
+    @sapUshellRightViewPortWidthL: 60rem;
+    @sapUshellRightViewPortWidthXL: 65rem;
+    @sapUshellRightViewPortWidthXXL: 68rem;
+
+    @sapUshellRightViewPortNegativeWidthXS: -39rem;
+    @sapUshellRightViewPortNegativeWidthS: -49rem;
+    @sapUshellRightViewPortNegativeWidthM: -55rem;
+    @sapUshellRightViewPortNegativeWidthL: -60rem;
+    @sapUshellRightViewPortNegativeWidthXL: -65rem;
+    @sapUshellRightViewPortNegativeWidthXXL: -68rem;
+
+#viewPortContainer {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    /* flex-grow does not work here (iOS Safari).  */
+    /* force container to fill all available space: */
+    flex-basis: 100%;
+    flex-shrink: 1;
+    max-height: 100%;
+}
+
+@media print {
+    #shell-shapes {
+        display: none;
+    }
+
+    .sapUShellApplicationContainer {
+        display: block;
+    }
+
+    .sapUshellApplicationPage .sapUiView {
+        display: block;
+    }
+}

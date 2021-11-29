@@ -1,0 +1,76 @@
+/* ============================================= */
+/* CSS for control sap.ushell/GridContainer.control */
+/* ============================================= */
+
+/* LESS Variables */
+/* ============================================= */
+
+/* Group Title */
+/* Desktop */
+@_sap_ushell_GridContainerSpacing:                                 0.5rem;
+
+/* All GridContainers */
+.sapUshellGridContainerContent{
+  margin-right: 0;
+  padding: @_sap_ushell_GridContainerSpacing;
+  padding-right: 0;
+}
+
+.sapUshellContainerIcon .sapUshellContainerIconHidden {
+  display: none;
+}
+
+.sapUshellDashboardGroupsContainerGrid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.sapUshellTileContainerContent.sapUshellGridContainerContent {
+  .sapUshellTileContainerHeader {
+    height: inherit;
+    margin-bottom: 1rem;
+
+    .sapUshellContainerTitle {
+      padding: 0;
+      height: inherit;
+    }
+  }
+
+  .sapUshellInner {
+    padding-top: 0;
+  }
+
+  .sapUshellTile {
+    margin: 0;
+  }
+
+  .sapUshellLineModeContainer {
+    margin-top: 0.5rem;
+  }
+}
+
+
+.sapUiMedia-GridContainerRangeSet-XS .sapUshellDashboardGroupsContainer .sapUshellTileContainerContent.sapUshellGridContainerContent {
+  padding: 0rem 0.5rem 3rem 0.5rem;
+  .sapUshellTileContainerHeader {
+    margin-bottom: 0.5rem;
+  }
+  .sapUshellLineModeContainer {
+    margin-top: 0.4375rem;
+  }
+}
+.sapUiMedia-GridContainerRangeSet-S .sapUshellDashboardGroupsContainer .sapUshellTileContainerContent.sapUshellGridContainerContent {
+  padding: 0rem 0.5rem 3rem 0.5rem;
+  .sapUshellTileContainerHeader {
+    margin-bottom: 0.5rem;
+  }
+}
+.sapUiMedia-GridContainerRangeSet-M .sapUshellDashboardGroupsContainer .sapUshellTileContainerContent.sapUshellGridContainerContent {
+  padding: 0rem 2rem 3rem 2rem;
+}
+.sapUiMedia-GridContainerRangeSet-L .sapUshellDashboardGroupsContainer .sapUshellTileContainerContent.sapUshellGridContainerContent {
+  padding: 0rem 2rem 3rem 2rem;
+}
+.sapUiMedia-GridContainerRangeSet-XL .sapUshellDashboardGroupsContainer .sapUshellTileContainerContent.sapUshellGridContainerContent {
+  padding: 0rem 3rem 3rem 3rem;
+}

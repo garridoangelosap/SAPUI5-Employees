@@ -1,0 +1,193 @@
+/* ======================================================== */
+/* CSS for sap.ui.unfied.ShellHeader.control (bluecrystal)  */
+/* ======================================================== */
+/* General Header Title Color */
+
+@sapUshellHeaderHoverColor:             fade(@sapUiShellHoverBackground, 15);
+
+.sapUshellShellHeader {
+  background-color: @sapUiShellColor;
+}
+
+.sapUshellShellHeadItm img {
+  border-radius: 2rem;
+}
+
+.sapUshellShellHeadItm:focus {
+  outline-color: @sapUiContentFocusColor;
+}
+
+.sapUshellAllMyAppsView {
+  box-shadow: @sapUiShadowLevel2;
+}
+
+.sapUshellAllMyAppsItemTitle {
+     font-family: @sapUiFontFamily;
+     font-size: @sapMFontMediumSize;
+     font-weight: normal;
+     color: @sapUiLink;
+}
+
+#allMyAppsView--sapUshellAllMyAppsDetailsPage {
+  background: @sapUiListBackground;
+  border-left: 1px solid @sapUiListBorderColor;
+  .sapMLIB {
+    border-bottom : 0;
+  }
+}
+
+.sapUshellAllMyAppsItemSubTitle {
+    font-family: @sapUiFontFamily;
+    font-size: @sapMFontMediumSize;
+    font-weight: normal;
+    color: @sapUiContentLabelColor;
+}
+
+.sapUshellShellHeadBegin .sapUshellShellIco:focus {
+  box-sizing: border-box;
+  outline-color: @sapUiContentFocusColor;
+}
+
+.sapUshellShellHeadItm > span {
+  font-weight: normal;
+  font-size: 1.125rem;
+  color: @sapUiShellTextColor;
+  border-radius: 50%;
+  text-shadow: @sapUiShadowText;
+}
+
+.sapUshellShellHeadItmSel,
+.sapUshellShellHeadItm:active {
+  text-shadow: none;
+}
+
+.sapUshellShellHeadItm.sapUshellShellHeadItmSel:active {
+  color: @sapUiShellActiveTextColor;
+  background-color: @sapUiShellActiveBackground;
+}
+
+.sapUshellShellHeadItm.sapUshellShellHeadItmSel,
+.sapUshellShellHeadItm.sapUshellShellHeadItmSel:active {
+  background-color: @sapUiShellActiveBackground;
+  color: @sapUiShellActiveTextColor;
+}
+
+
+.sapUshellShellHeadItm:active ,
+.sapUshellShellHeadItm:active:hover {
+  background-color: @sapUiShellActiveBackground;
+  color: @sapUiShellActiveTextColor;
+}
+
+.sapUshellShellHeader .sapUshellShellHeadItm:hover {
+  background-color: @sapUshellHeaderHoverColor;
+}
+
+.sapUshellShellHeadItm.sapUshellShellHeadItmSel:active:hover,
+.sapUshellShellHeadItm.sapUshellShellHeadItmSel:hover {
+  background-color: @sapUiShellHoverToggleBackground;
+  color: @sapUiShellActiveTextColor;
+}
+
+.sapUshellShellHeadItmCounter:after{
+  background: @sapUiContentBadgeBackground;
+  color: @sapUiButtonEmphasizedTextColor;
+  box-shadow: -1px 1px 0px rgba(0,0,0,0.2);
+}
+
+
+
+/** --------------------------------------- **/
+/** Styles for Shell Title's Navigation Menu**/
+/** --------------------------------------- **/
+
+.sapUshellAppTitle, .sapUshellShellHeadSubtitle {
+  color: @sapUiShellTextColor;
+  text-shadow: @sapUiShadowText;
+}
+.sapUshellAppTitleClickable:hover {
+  background-color: fade(@sapUiShellHoverBackground, 15);
+  border-radius: 0.2rem;
+}
+.sapUshellAppTitleClickable:active {
+  background-color: @sapUiShellActiveBackground;
+  text-shadow: none;
+  border-radius: 0.2rem;
+  color: @sapUiShellActiveTextColor;
+}
+
+.sapUshellAppTitle.sapUshellAppTitleClickable:focus {
+  outline-color: @sapUiContentFocusColor;
+}
+
+/** Hierarchy Items - (List Items) Icon Styles **/
+.sapUshellNavigationMenuListItems {
+  color: @sapUiListBackground;
+}
+
+.sapUshellNavigationMenuListItems:not(:last-child) .sapMLIBContent:after {
+  background: @sapUiShellTextColor;
+}
+
+.sapUshellNavigationMenuListItems:not(:first-child) .sapMLIBContent:before {
+  background: @sapUiShellTextColor;
+}
+
+/** Shell Application Title control **/
+
+/** Shell Navigation Menu - ResponsivePopover**/
+#sapUshellAppTitlePopover {
+  background-color: @sapUiListBackground;
+}
+
+/** Shell Navigation Menu - related Apps grid (within a flexbox) - override the text-tab-bar content area height **/
+#sapUshellRelatedAppsItems {
+  background-color: @sapUiGlobalBackgroundColor;
+  border-top: @sapUshellOnePixel solid @sapUiListBorderColor ;
+  border-bottom: @sapUshellOnePixel solid @sapUiListBorderColor;
+}
+
+#sapUshellRelatedAppsItems label {
+  font-size: 1rem;
+}
+
+/** Shell Navigation Menu - override background color*/
+#sapUshellNavMenuTabBar {
+  background-color: @sapUiListBackground;
+}
+/** Shell Navigation Menu - override to style of the text-tab-bar head area background color**/
+#sapUshellNavMenuTabBar .sapMITH {
+  background-color: @sapUiListBackground;
+}
+
+/** Shell Navigation Menu - Mini Tiles (of relatedApps)**/
+.sapUshellNavMiniTile {
+  background-color: @sapUiTileBackground;
+  box-shadow: 0 0 @sapUshellOnePixel 0 @sapUiTileBorderColor;
+}
+
+.sapUshellNavMiniTile:hover {
+  box-shadow: 0 0 0.125rem @sapUiTileBorderColor;
+}
+.sapUshellNavMiniTile:active {
+  box-shadow: 0 0 0.125rem @sapUiTileBorderColor;
+}
+
+/** Shell Navigation Menu - Mini Tiles - Title **/
+.sapUshellNavMiniTileTitle{
+  color: @sapUiListTextColor;
+}
+/** Shell Navigation Menu - Mini Tiles - Subtitle **/
+.sapUshellNavMiniTileSubtitle{
+  color: @sapUiListTextColor;
+}
+
+/** Shell Navigation Menu - Mini Tiles - Icon **/
+.sapUshellNavMiniTileIcon{
+  color: @sapUiBrand;
+}
+
+/* New Design switch */
+.sapUshellNDSLabel {
+  color: @sapUiShellTextColor;
+}

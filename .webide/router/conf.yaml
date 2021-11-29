@@ -1,0 +1,21 @@
+backends:
+  - path-prefix: app1
+    description: Open external browser [ app1 ]
+    url: http://127.0.0.1:8080
+    rewrite-host: true
+  - path-prefix: app2
+    description: Open external browser [ app2 ]
+    url: http://127.0.0.1:35729
+    rewrite-host: true
+  - path-prefix: app3
+    description: Open external browser [ app3 ]
+    url: http://127.0.0.1:8081
+    rewrite-host: true
+  - path-prefix: app4
+    description: Open external browser [ app4 ]
+    url: http://127.0.0.1:35730
+    rewrite-host: true
+  - path-prefix: app5
+    description: Open external browser [ app5 ]
+    url: http://127.0.0.1:35731
+    rewrite-host: true

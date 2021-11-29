@@ -1,0 +1,23 @@
+{
+	"resources":[
+		{
+			"name": "Component.js",
+			"isDebug":true
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"raw":"i18n/i18n.properties",
+			"locale":""
+		},
+		{
+			"name": "manifest.json"
+		},
+		{
+			"name": "view/QuickView.controller.js",
+			"isDebug":true
+		},
+		{
+			"name": "view/QuickView.view.xml"
+		}
+	]
+}

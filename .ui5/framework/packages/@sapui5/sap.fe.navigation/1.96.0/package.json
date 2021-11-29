@@ -1,0 +1,25 @@
+{
+	"name": "@sapui5/sap.fe.navigation",
+	"version": "1.96.0",
+	"description": "SAPUI5 Library sap.fe.navigation",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"author": "SAP SE (https://www.sap.com)",
+	"homepage": "https://sap.github.io/ui5-tooling/pages/SAPUI5/",
+	"scripts": {
+		"build": "echo 'nothing to do'",
+		"prepare-npm-sources": "babel target/npm-sources/src --out-dir target/npm-sources/src --extensions \".ts\" --config-file ../../.babelrc",
+		"test": "echo 'nothing to do'"
+	},
+	"keywords": [
+		"sapui5",
+		"ui5"
+	],
+	"devDependencies": {
+		"@babel/cli": "^7.14.8",
+		"@ui5/cli": "^2.10.0"
+	}
+
+,"_resolved": ""
+,"_integrity": ""
+,"_from": "@sapui5/sap.fe.navigation@1.96.0"
+}

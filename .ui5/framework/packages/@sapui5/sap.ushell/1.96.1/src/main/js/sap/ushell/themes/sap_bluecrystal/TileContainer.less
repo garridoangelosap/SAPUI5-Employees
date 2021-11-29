@@ -1,0 +1,238 @@
+/* ========================================================================= */
+/* CSS for control "sap.ushell.ui.launchpad.TileContainer" (sap_bluecrystal) */
+/* ========================================================================= */
+
+@sapUshellGroupHeaderTitleColor: @sapUiTextInverted;
+@sapUshellTileContainerDashboardGroupTitleFontFamily: @sapUiFontFamily;
+@sapUshellTileContainerDashboardGroupTitleFontWeight: @sapUiFontHeaderWeight;
+@sapUshellTileContainerEditModeBGColor: fade(@sapTextColor, 20);
+@sapUshellTileContainerEditModeBGColorHover: fade(@sapTextColor, 20);
+@sapUshellTileContainerHeaderActionsButtonHover: fade(@sapTextColor, 20);
+@sapUshellTileContainerCloneColor: fade(@sapTextColor, 40);
+@sapUshellTileContainerPlaceholderColor: @sapUiTextInverted;
+@sapUshellTileContainerAddGroupText: @sapUiTextInverted;
+
+@sapUshellTileContainerDashboardGroupTitleFontSizeDesktop: @sapMFontHeader2Size;
+@sapUshellTileContainerDashboardGroupTitleFontSizePhone: @sapMFontHeader4Size;
+
+@sapUshellTileContainerCatalogGroupTitleFontFamily: @sapUiFontFamily;
+@sapUshellTileContainerCatalogGroupTitleFontWeight: normal;
+
+/* circle div for dragging indicator */
+.sapUshellCircle {
+  background-color: fade(@sapUiWhite, 40);
+  border-radius: 0.57rem;
+}
+
+.sapUshellTileContainerLocked h2:after {
+  color: @sapUiTextInverted;
+}
+
+/* only TileContainers located on the dashboard */
+.sapUshellDashboardGroupsContainer .sapUshellContainerTitle {
+  font-family: @sapUshellTileContainerDashboardGroupTitleFontFamily;
+  font-weight: @sapUshellTileContainerDashboardGroupTitleFontWeight;
+}
+
+.sapUiMedia-Std-Phone {
+  .sapUshellContainerTitle {
+    color: @sapUshellGroupHeaderTitleColor;
+    font-size: @sapUshellTileContainerDashboardGroupTitleFontSizePhone;
+  }
+
+  .sapUshellTileContainerTitleInput {
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    label,
+    input {
+      font-size: @sapUshellTileContainerDashboardGroupTitleFontSizePhone;
+    }
+  }
+}
+
+.sapUiMedia-Std-Tablet,
+.sapUiMedia-Std-Desktop {
+  .sapUshellContainerTitle {
+    color: @sapUshellGroupHeaderTitleColor;
+    font-size: @sapUshellTileContainerDashboardGroupTitleFontSizeDesktop;
+    font-weight: @sapUshellTileContainerDashboardGroupTitleFontWeight;
+  }
+
+  .sapUshellLinkTile:focus {
+    outline-color: #ffffff;
+  }
+
+  .sapUshellTileContainerTitleInput input {
+    font-size: @sapUshellTileContainerDashboardGroupTitleFontSizeDesktop;
+  }
+
+  .sapUshellTileContainerTitleInput {
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder {
+      font-size: @sapUshellTileContainerDashboardGroupTitleFontSizeDesktop;
+    }
+
+    label {
+      /* ie */
+      margin-top: 0.125rem;
+    }
+  }
+}
+
+.sapUshellDashboardGroupsContainer .sapUshellTileContainerEditMode {
+  background: @sapUshellTileContainerEditModeBGColor;
+  border-radius: @sapUshellTwoPixels;
+}
+
+/* Only TileContainers located on the catalog */
+.sapUshellCatalog .sapUshellTileContainerContent h3 {
+  font-family: @sapUshellTileContainerCatalogGroupTitleFontFamily;
+  font-weight: @sapUshellTileContainerCatalogGroupTitleFontWeight;
+}
+
+.sapUshellTileContainerContent {
+  .sapUshellNoFilteredItems {
+    font-size: 1rem !important;
+  }
+
+  .sapUshellInner:after {
+    font-size: 0;
+  }
+}
+
+/*Tile Container in Edit Mode*/
+/*Add Group button*/
+.sapUshellTileContainer {
+  .sapUshellTileContainerBeforeContent,
+  .sapUshellTileContainerAfterContent {
+    .sapUshellAddGroupButton {
+      &:focus {
+        outline-color:@sapUiInvertedElement;
+      }
+
+      .sapMBtnIcon {
+        font-size: 1.0rem;
+      }
+
+      div {
+        color: @sapUshellTileContainerAddGroupText;
+        text-shadow: 0 @sapUshellOnePixel 0 rgba(0, 0, 0, 0.5);
+        border: 1.125rem;
+        font-size: 1.25rem;
+
+        & > * {
+          font-size: 1.25rem;
+          color: @sapUshellTileContainerAddGroupText;
+        }
+      }
+    }
+  }
+}
+
+.sapMBtn.sapUshellAddGroupButton:hover > .sapMBtnInner:not(.sapMBtnActive) {
+  background-color: @sapUshellTileContainerEditModeBGColorHover;
+}
+
+.sapUshellTileContainerContent .sapUshellTileContainerHeader {
+  &:focus {
+    outline: @sapUshellOnePixel dotted @sapUiInvertedElement;
+  }
+
+  .sapUshellHeaderActionButton,
+  .sapUshellContainerTitle:focus {
+    outline-color: @sapUiInvertedElement;
+  }
+}
+
+.sapUshellContainerTitle {
+  text-shadow: 0 @sapUshellOnePixel fade(@sapUiContentShadowColor, 50);
+}
+
+/*Tile Container Header Buttons*/
+.sapUshellTileContainerHeader .sapUshellHeaderActionButton div {
+  background-color: transparent;
+  color: @sapUiTextInverted;
+  text-shadow: 0 @sapUshellOnePixel 0 rgba(0, 0, 0, 0.5);
+}
+
+.sapMBtn.sapUshellHeaderActionButton:hover > .sapMBtnInner:not(.sapMBtnActive) {
+  background-color: @sapUshellTileContainerHeaderActionsButtonHover;
+}
+
+.sapUshellHeaderActionButton .sapMBtnIcon {
+  color: @sapUiInvertedElement !important;
+}
+
+#dashboardGroups .sapUshellDashboardGroupsContainerItem-placeholder {
+  border: @sapUshellTwoPixels dashed @sapUshellTileContainerPlaceholderColor;
+  background-color: transparent;
+
+  .sapUshellTileContainerEditMode {
+    background: transparent;
+  }
+}
+.sapUshellDashboardGroupsContainerItem.sapUshellDashboardGroupsContainerItem-clone .sapUshellContainerTitle {
+  background-color: @sapUshellTileContainerCloneColor;
+  border-color: @sapUiLightestBorder;
+  font-weight: inherit;
+}
+
+.sapUshellTileContainerHeader .sapUshellTileContainerTitleInput input {
+  background: rgba(255, 255, 255, 0.2);
+  color: @sapUiTextInverted;
+}
+
+.sapUshellTileContainerTitleInput {
+  ::-webkit-input-placeholder,
+  :-moz-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder {
+    color: @sapUiTextInverted;
+  }
+
+  label {
+    color: @sapUiExtraLightText;
+  }
+}
+
+.sapUshellContainerIcon {
+  color: @sapUiTextInverted;
+}
+
+.sapUiMedia-Std-Phone .sapUshellTileContainerTitleInput input {
+  font-size: @sapUshellTileContainerDashboardGroupTitleFontSizePhone;
+}
+
+.sapUiMedia-Std-Tablet .sapUshellTileContainerTitleInput input,
+.sapUiMedia-Std-Desktop .sapUshellTileContainerTitleInput input {
+  font-size: @sapUshellTileContainerDashboardGroupTitleFontSizeDesktop;
+}
+
+.sapUiMedia-Std-Phone .sapUshellTileContainerTitleInput {
+  ::-webkit-input-placeholder,
+  :-moz-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder,
+  label {
+    font-size: @sapUshellTileContainerDashboardGroupTitleFontSizePhone;
+  }
+}
+
+.sapUiMedia-Std-Tablet .sapUshellTileContainerTitleInput,
+.sapUiMedia-Std-Desktop .sapUshellTileContainerTitleInput {
+  ::-webkit-input-placeholder,
+  :-moz-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder {
+    font-size: @sapUshellTileContainerDashboardGroupTitleFontSizeDesktop;
+  }
+
+  label {
+    /* ie */
+    margin-top: 0.125rem;
+  }
+}

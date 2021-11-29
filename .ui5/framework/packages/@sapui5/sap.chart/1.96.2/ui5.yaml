@@ -1,0 +1,9 @@
+specVersion: '1.0'
+type: library
+metadata:
+  name: sap.chart
+framework:
+  name: SAPUI5
+  libraries:
+    - name: sap.ui.core
+    - name: sap.viz

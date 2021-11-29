@@ -1,0 +1,83 @@
+/* ============================================= */
+/* CSS for control sap.ushell/AnchorItem.control */
+/* ============================================= */
+
+@sapUshellAnchorItemSelectedBorderWidth: 2px;
+
+.sapUshellAnchorItem {
+  display: inline-block;
+  padding-right: 2rem;
+  padding-left: 0.25rem;
+  box-sizing: border-box;
+  min-width: 5rem;
+  //max-width: 20rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: top;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+
+  &.sapUshellShellHidden { display: none; }
+}
+
+.sapUshellAnchorItem:hover {
+  cursor: pointer;
+}
+
+.sapUshellAnchorItemSelected .sapUshellAnchorItemInner:not(.sapUshellAnchorInnerMarker) {
+  border-bottom: solid @sapUshellAnchorItemSelectedBorderWidth @sapUiShellTextColor;
+}
+
+.sapUshellAnchorItemDropCollision {
+  border-bottom: solid 1px @sapUiShellTextColor;
+  border-top: solid 1px @sapUiShellTextColor;
+  border-left: solid 1px @sapUiShellTextColor;
+  border-right: solid 1px @sapUiShellTextColor;
+}
+
+.sapUshellAnchorItemInner {
+  font-size: 1.125rem;
+  line-height: 2.875rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sapUshellAnchorItemDisabled {
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+
+.sap-tablet, .sap-desktop {
+  .sapUshellAnchorPopoverContainer {
+    max-height: 20rem;
+  }
+
+  .sapUshellAnchorItemsPopover {
+    .sapMList {
+      overflow: auto;
+      min-width: 10rem;
+      max-width: 40rem;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.sap-phone {
+  .sapUshellAnchorItemsPopover {
+    .sapMBarMiddle .sapMBarPH {
+      position: absolute;
+      left: 1rem;
+    }
+  }
+
+  .sapMDialogSection {
+    overflow-y: auto;
+  }
+}
+
+@-webkit-keyframes slidetounlock {
+  0% { background-position: -7rem 0; }
+  100% { background-position: 1rem 0; }
+}

@@ -1,0 +1,35 @@
+/* ====================================================================== */
+/* CSS for control "sap.ushell.ui.launchpad.AnchorItem" (sap_bluecrystal) */
+/* ====================================================================== */
+
+@sapUshellAnchorItemTextColor: @sapUiTextInverted;
+
+.sapUshellAnchorItem {
+  font-family: @sapUiFontFamily;
+  font-size: @sapMFontHeader6Size;
+  font-weight: @sapUiFontHeaderWeight;
+  color: @sapUshellAnchorItemTextColor;
+  opacity: 1;
+}
+
+.sapUshellAnchorItemInner {
+  line-height: 2.815rem;
+  text-shadow: 0 @sapUshellOnePixel fade(@sapUiContentShadowColor, 50);
+}
+
+.sapUshellAnchorNavigationBar .sapUshellAnchorItem:hover {
+  color: @sapUshellAnchorItemTextColor;
+}
+
+.sapUshellAnchorNavigationBar .sapUshellAnchorItemSelected {
+  color: @sapUshellAnchorItemTextColor;
+
+  .sapUshellAnchorItemInner {
+    border-bottom: 0.25rem solid;
+  }
+}
+
+.sap-desktop:not([data-sap-ui-browser^="ie"]) .sapUshellAnchorItem:focus {
+  outline: @sapUshellOnePixel dotted @sapUiContentFocusColor;
+  outline-offset: -@sapUshellOnePixel;
+}

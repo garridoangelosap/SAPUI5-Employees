@@ -1,0 +1,8 @@
+[credential]
+	helper = /home/user/.bas-git/bas-git-helper-init.sh
+[user]
+	email = garridoangelosap@gmail.com
+	name = garridoangelosap
+[credential "https://github.com"]
+	helper = store
+	helper = /home/user/.bas-git/bas-git-helper.sh

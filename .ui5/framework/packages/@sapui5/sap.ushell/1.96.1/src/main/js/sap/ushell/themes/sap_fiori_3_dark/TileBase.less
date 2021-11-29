@@ -1,0 +1,86 @@
+/* ================================================================ */
+/* CSS for control "sap.ushell.ui.tile.TileBase" (sap_fiori_3_dark) */
+/* ================================================================ */
+
+@sapUshellTileBaseSubtitleColor: lighten(@sapUiTileTextColor, 20);
+
+.sapUiMedia-Std-Desktop .sapUshellTileBase:focus {
+  outline-color: @sapUiContentContrastFocusColor;
+  outline-style: dotted;
+  outline-width: 0.125rem;
+  outline-offset: -0.125rem;
+}
+
+.sapUiMedia-Std-Desktop .sapUshellTileBase:hover,
+.sapUshellTileBase:active {
+  background: fade(@sapUiShellHoverBackground, 4);
+}
+
+.sapUshellTileBase {
+  color: @sapUiTileTextColor;
+
+  .sapUshellTileBaseNeutral { color: @sapUiNeutralElement; }
+  .sapUshellTileBasePositive { color: @sapUiPositiveElement; }
+
+  .sapUshellTileBaseTitle {
+    color: @sapUiTileTextColor;
+    font-weight: @sapUshellTileBaseTitleFontWeight;
+    font-family: @sapUshellTileBaseTitleFontFamily;
+    font-size: @sapUshellTileBaseTitleFontSizeDesktop;
+
+    b {
+      background-color: @sapUiContentSearchHighlightColor;
+      font-weight: inherit;
+    }
+  }
+
+  .sapUshellTileBaseSubtitle {
+    color: @sapUshellTileBaseSubtitleColor;
+    font-weight: @sapUshellTileBaseSubtitleFontWeight;
+    font-family: @sapUshellTileBaseSubtitleFontFamily;
+    font-size: @sapUshellTileBaseSubtitleFontSizeDesktop;
+
+    b {
+      background-color: @sapUshellTileBaseTextHighlightBgColor;
+      font-weight: inherit;
+    }
+  }
+
+  .sapUshellTileBaseIcon {
+    color: @sapUiBrand;
+    font-size: @sapUshellTileBaseIconFontSizeDesktop;
+  }
+
+  .sapUshellTileBaseInfo {
+    color: @sapUshellTileBaseSubtitleColor;
+    font-weight: @sapUshellTileBaseBottomLineFontWeight;
+    font-family: @sapUshellTileBaseBottomLineFontFamily;
+    font-size: @sapUshellTileBaseBottomLineFontSizeDesktop;
+
+    &.sapUshellTileBaseNeutral { color: @sapUiNeutralElement; }
+    &.sapUshellTileBasePositive { color: @sapUiPositiveElement; }
+
+    b {
+      background-color: @sapUshellTileBaseTextHighlightBgColor;
+      font-weight: inherit;
+    }
+  }
+}
+
+.sapUiMedia-Std-Phone .sapUshellTileBase {
+  .sapUshellTileBaseTitle {
+    font-size: @sapUshellTileBaseTitleFontSizePhone;
+  }
+
+  .sapUshellTileBaseSubtitle {
+    font-size: @sapUshellTileBaseSubtitleFontSizePhone;
+  }
+
+  .sapUshellTileBaseIcon {
+    font-size: @sapUshellTileBaseIconFontSizePhone;
+  }
+
+  .sapUshellTileBaseInfo {
+    font-size: @sapUshellTileBaseBottomLineFontSizePhone;
+  }
+}

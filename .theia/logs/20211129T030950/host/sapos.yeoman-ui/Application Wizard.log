@@ -1,0 +1,7 @@
+{
+  "error": {},
+  "label": "Application Wizard.Webview Rpc.RpcExtension.RpcCommon",
+  "level": "error",
+  "message": "handleRequest: Failed processing request rpc-request id: 0.940378288808631",
+  "time": "2021-11-29T03:10:42.306Z"
+}

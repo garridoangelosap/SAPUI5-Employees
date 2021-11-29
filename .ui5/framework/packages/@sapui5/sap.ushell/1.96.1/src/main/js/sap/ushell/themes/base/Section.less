@@ -1,0 +1,60 @@
+/* ======================================================== */
+/* CSS for control "sap.ushell.ui.launchpad.Section" (base) */
+/* ======================================================== */
+
+.sapUshellSection {
+  &:focus,
+  .sapUshellSectionCompactArea:focus {
+    outline: @sapUiContentFocusWidth @sapUiContentFocusStyle @sapUiContentFocusColor;
+    outline-offset: 0.0625rem;
+  }
+
+  .sapUshellSectionNoVisualizationsText {
+    padding: 1rem;
+    cursor: inherit;
+    display: none;
+  }
+
+  .sapUshellSectionTitle {
+    padding: 1rem 0;
+    font-family: @sapUiFontFamily;
+    font-size: @sapMFontHeader4Size;
+    color: @sapUiShellGroupTitleTextColor;
+  }
+
+  .sapUshellSectionHeader {
+    background-color: @sapUiBaseBG;
+    margin-bottom: 0.5rem;
+
+    @media @query-size-min-600 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .sapUshellSectionDefaultArea,
+  .sapUshellSectionFlatArea {
+    padding-bottom: 0.5rem;
+
+    @media @query-size-min-600 {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &.sapUshellSectionEdit {
+    background-color: fade(@sapUiBaseColor, 30);
+
+    &.sapUshellSectionHidden {
+      background-color: darken(@sapUiBaseColor, 5);
+    }
+  }
+
+  &.sapUshellSectionNoVisualizations {
+    .sapUshellSectionNoVisualizationsText {
+      display: block;
+    }
+
+    .sapUshellSectionCompactArea {
+      display: none;
+    }
+  }
+}

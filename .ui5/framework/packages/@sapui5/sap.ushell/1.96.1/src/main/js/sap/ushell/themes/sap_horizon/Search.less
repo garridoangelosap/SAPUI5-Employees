@@ -1,0 +1,46 @@
+/* ================================== */
+/* CSS for control sap.ushell/Search  */
+/* Horizon theme                      */
+/* ================================== */
+
+/* make tabstrips look like tabstrips (technically we use the overflow toolbar which does not look like tabstrips) */
+
+.searchTabStrips.sapMTB-Transparent-CTX.sapMTB {
+    padding-left: 0;
+}
+
+.searchTabStrips .sapMBtn,
+.searchTabStrips .sapMBtn .sapMBtnInner:not(.sapMBtnIconFirst) {
+    background-color: inherit !important;
+    color: @sapUiGroupTitleTextColor !important;
+    text-shadow: @sapUiShadowText !important;
+    border-color: transparent !important;
+    outline-color: inherit !important;
+}
+
+.searchTabStrips .sapMBtn .sapMBtnInner:not(.sapMBtnIconFirst) > .sapMBtnContent {
+  color: inherit !important;
+}
+
+.searchTabStrips .sapMBtn .sapMBtnInner.sapMToggleBtnPressed:not(.sapMBtnIconFirst) {
+    color: @sapUiSelected !important;
+    text-shadow: @sapUiShadowText !important;
+}
+
+.searchTabStrips .sapMBtn .sapMBtnInner.sapMToggleBtnPressed:not(.sapMBtnIconFirst) > .sapMBtnContent {
+    border-bottom: 2px solid @sapUiSelected;
+    height: 106%;
+}
+
+/* IE */
+
+.searchTabStrips .sapMBtn:focus > .sapMBtnInner.sapMToggleBtnPressed.sapMFocusable.sapMIE {
+    outline: none;
+}
+
+.searchTabStrips .sapMBtn:focus > .sapMToggleBtnPressed > .sapMBtnFocusDiv,
+.searchTabStrips .sapMBtn:focus > .sapMBtnActive > .sapMBtnFocusDiv {
+    border-color: @sapUiContentFocusColor;
+}
+
+/* End */
