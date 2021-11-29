@@ -40,7 +40,7 @@ sap.ui.define([
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
 									"title": "employees",
-									"targetURL": "#logaliemployees-display"
+									"targetURL": "#logaligroupemployees-display"
 								}
 							}]
 						}]
@@ -51,18 +51,18 @@ sap.ui.define([
 				"adapter": {
 					"config": {
 						"inbounds": {
-							"logaliemployees-display": {
-								"semanticObject": "logaliemployees",
+							"logaligroupemployees-display": {
+								"semanticObject": "logaligroupemployees",
 								"action": "display",
-								"description": "employees app",
+								"description": "employees",
 								"title": "employees",
 								"signature": {
 									"parameters": {}
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=logali.employees",
-									"url": sap.ui.require.toUrl("logali/employees")
+									"additionalInformation": "SAPUI5.Component=logaligroup.employees",
+									"url": sap.ui.require.toUrl("logaligroup/employees")
 								}
 							}
 						}

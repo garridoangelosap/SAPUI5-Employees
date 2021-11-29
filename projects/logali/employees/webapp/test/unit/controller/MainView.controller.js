@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"logali/employees/controller/MainView.controller"
+	"logaligroup/employees/controller/MainView.controller"
 ], function (Controller) {
 	"use strict";
 

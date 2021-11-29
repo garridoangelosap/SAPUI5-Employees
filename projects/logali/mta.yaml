@@ -2,35 +2,21 @@ _schema-version: "3.2"
 ID: logali
 version: 0.0.1
 modules:
-- name: logali-approuter
-  type: approuter.nodejs
-  path: logali-approuter
-  requires:
-  - name: logali_html_repo_runtime
-  - name: logali-dest-srv
-    group: destinations
-    properties:
-      forwardAuthToken: false
-      name: ui5
-      url: https://ui5.sap.com
-  parameters:
-    disk-quota: 256M
-    memory: 256M
-- name: logali_ui_deployer
+- name: logali-app-content
   type: com.sap.application.content
   path: .
   requires:
-  - name: logali_html_repo_host
+  - name: logali-repo-host
     parameters:
       content-target: true
   build-parameters:
     build-result: resources
     requires:
     - artifacts:
-      - logaliemployees.zip
-      name: logaliemployees
+      - logaligroupemployees.zip
+      name: logaligroupemployees
       target-path: resources/
-- name: logaliemployees
+- name: logaligroupemployees
   type: html5
   path: employees
   build-parameters:
@@ -41,15 +27,11 @@ modules:
     - npm run build:cf
     supported-platforms: []
 resources:
-- name: logali_html_repo_runtime
+- name: logali-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
-    service-plan: app-runtime
-- name: logali_html_repo_host
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: html5-apps-repo
+    service-name: logali-html5-srv
     service-plan: app-host
 - name: logali-dest-srv
   type: org.cloudfoundry.managed-service

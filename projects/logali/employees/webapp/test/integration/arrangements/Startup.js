@@ -1,10 +1,10 @@
 sap.ui.define([
 	"sap/ui/test/Opa5",
-	"logali/employees/localService/mockserver"
+	"logaligroup/employees/localService/mockserver"
 ], function (Opa5, mockserver) {
 	"use strict";
 
-	return Opa5.extend("logali.employees.test.integration.arrangements.Startup", {
+	return Opa5.extend("logaligroup.employees.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptionsParameter) {
 			var oOptions = oOptionsParameter || {};
@@ -20,7 +20,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "logali.employees",
+					name: "logaligroup.employees",
 					async: true
 				},
 				hash: oOptions.hash,

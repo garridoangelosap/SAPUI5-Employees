@@ -1,12 +1,12 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-		"logali/employees/model/models"
+		"logaligroup/employees/model/models"
 	],
     function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("logali.employees.Component", {
+        return UIComponent.extend("logaligroup.employees.Component", {
             metadata: {
                 manifest: "json"
             },

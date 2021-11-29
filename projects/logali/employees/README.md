@@ -1,16 +1,16 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Nov 29 2021 03:31:14 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Mon Nov 29 2021 20:45:04 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori|
 |**App Generator Version**<br>1.4.3|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Floorplan Used**<br>simple|
-|**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>https://services.odata.org/V2/Northwind/Northwind.svc/
+|**Service Type**<br>None|
+|**Service URL**<br>N/A
 |**Module Name**<br>employees|
 |**Application Title**<br>employees|
-|**Namespace**<br>logali|
+|**Namespace**<br>logaligroup|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest|
 |**Enable Code Assist Libraries**<br>False|
@@ -19,7 +19,7 @@
 
 ## employees
 
-employees app
+employees
 
 ### Starting the generated app
 

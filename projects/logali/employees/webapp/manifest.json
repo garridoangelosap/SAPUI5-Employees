@@ -1,7 +1,7 @@
 {
   "_version": "1.32.0",
   "sap.app": {
-    "id": "logali.employees",
+    "id": "logaligroup.employees",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -11,12 +11,12 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "mainService": {
-        "uri": "/V2/Northwind/Northwind.svc/",
+        "uri": "/sap/opu/odata/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "localUri": "localService/metadata.xml",
-          "odataVersion": "2.0"
+          "odataVersion": "4.0"
         }
       }
     }
@@ -53,13 +53,19 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "logali.employees.i18n.i18n"
+          "bundleName": "logaligroup.employees.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true,
+          "groupId": "$direct"
+        }
       }
     },
     "resources": {
@@ -74,7 +80,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "logali.employees.view",
+        "viewPath": "logaligroup.employees.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -99,7 +105,7 @@
       }
     },
     "rootView": {
-      "viewName": "logali.employees.view.MainView",
+      "viewName": "logaligroup.employees.view.MainView",
       "type": "XML",
       "async": true,
       "id": "MainView"

@@ -1,6 +1,6 @@
 specVersion: "2.5"
 metadata:
-  name: logali.employees
+  name: logaligroup.employees
 type: application
 server:
   customMiddleware:
@@ -9,9 +9,8 @@ server:
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         backend:
-          - path: /V2
-            url: https://services.odata.org
-            destination: Northwind
+          - path: /sap
+            url: http://localhost
         ui5:
           path:
             - /resources
@@ -27,4 +26,4 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: logali.employees
+        component: logaligroup.employees

@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"logali/employees/test/unit/AllTests"
+		"logaligroup/employees/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});
