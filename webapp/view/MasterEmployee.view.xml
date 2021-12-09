@@ -3,8 +3,7 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-
-    <Page id="page" title="{i18n>title}">
+ <Page id="page" title="{i18n>title}">
         <content>
             <HBox wrap="Wrap">
                 <Label id="labelEmployee" labelFor="inputEmployee" text="{i18n>labelEmployee}" class="sapUiSmallMargin"/>
@@ -21,5 +20,4 @@
             <core:Fragment fragmentName="logaligroup.employees.fragment.TableEmployee" type="XML"/>
         </content>
     </Page>
-
 </mvc:View>
