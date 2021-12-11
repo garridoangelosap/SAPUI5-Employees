@@ -44,6 +44,7 @@ sap.ui.define([
             var incidenceModel = new sap.ui.model.json.JSONModel([]);
             detailView.setModel(incidenceModel, "incidenceModel");
             detailView.byId("tableIncidence").removeAllContent();
+            
         }
 
     });

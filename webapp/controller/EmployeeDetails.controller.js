@@ -7,11 +7,10 @@ sap.ui.define([
 
     };
 
-
     function onCreateIncidence() {
 
         var tableIncidence = this.getView().byId("tableIncidence");
-        var newIncidence = sap.ui.xmlfragment("logaligroup.Employees.fragment.NewIncidence", this);
+        var newIncidence = sap.ui.xmlfragment("logaligroup.employees.fragment.NewIncidence", this);
         var incidenceModel = this.getView().getModel("incidenceModel");
         var odata = incidenceModel.getData();
         var index = odata.length;
