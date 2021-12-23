@@ -1,3 +1,4 @@
+
 sap.ui.define([
     "sap/ui/core/mvc/Controller"
 ], function (Controller) {
@@ -8,7 +9,7 @@ sap.ui.define([
 
             var oView = this.getView();
 
-            // @ts-ignore
+            
             var oJSONModelEmpl = new sap.ui.model.json.JSONModel();
             oJSONModelEmpl.loadData("../localService/mockdata/Employees.json", false);
             oView.setModel(oJSONModelEmpl, "jsonEmployees");
@@ -38,7 +39,7 @@ sap.ui.define([
         showEmployeeDetails: function (category, nameEvent, path) {
 
             var detailView = this.getView().byId("detailEmployeeView");
-            detailView.bindElement("jsonEmployees>" + path);
+            detailView.bindElement("odataNorthwind>" + path);
             this.getView().getModel("jsonLayout").setProperty("/ActiveKey", "TwoColumnsMidExpanded");
 
             var incidenceModel = new sap.ui.model.json.JSONModel([]);
