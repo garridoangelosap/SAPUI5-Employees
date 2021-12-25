@@ -46,7 +46,6 @@ sap.ui.define([
         function onSaveIncidence(oEvent) {
             var incidence = oEvent.getSource().getParent().getParent();
             var incidenceRow = incidence.getBindingContext("incidenceModel");
-            var temp = incidenceRow.sPath.replace('/', '');
             this._bus.publish("incidence", "onSaveIncidence", { incidenceRow: incidenceRow.sPath.replace('/', '') });
         };
 
