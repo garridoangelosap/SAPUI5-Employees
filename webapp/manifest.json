@@ -91,9 +91,12 @@
         "dataSource": "YSAPUI5_SRV_01",
         "preload": true,
         "settings": {
-          "defaultBindingMode": "TwoWay",
-          "defaultCountMode": "Inline",
-          "refreshAfterChange": false
+            "defaultBindingMode": "TwoWay",
+          "defaultOperationMode" : "Server",
+          "defaultCountMode": "Request",
+          "refreshAfterChange": false,
+          "useBatch": false,
+          "defaultUpdateMethod": "Put"
         }
       },
       "": {
