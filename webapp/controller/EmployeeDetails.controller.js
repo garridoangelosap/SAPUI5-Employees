@@ -26,12 +26,19 @@ sap.ui.define([
     function onDeleteIncidence(oEvent) {
 
         var contexjObj = oEvent.getSource().getBindingContext("incidenceModel").getObject();
-        this._bus.publish("incidence", "onDeleteIncidence", {
-            IncidenceId: contexjObj.IncidenceId,
-            SapId: contexjObj.SapId,
-            EmployeeId: contexjObj.EmployeeId
-        });
 
+        MessageBox.confirm(this.getView().getModel("i18n").getResourceBundle().getText("confirmDeleteIncidence"), {
+            onClose: function (oAction) {
+
+                if (oAction === "OK") {
+                    this._bus.publish("incidence", "onDeleteIncidence", {
+                        IncidenceId: contexjObj.IncidenceId,
+                        SapId: contexjObj.SapId,
+                        EmployeeId: contexjObj.EmployeeId
+                    });
+                }
+            }.bind(this)
+        });
     };
 
     function onSaveIncidence(oEvent) {
@@ -97,7 +104,7 @@ sap.ui.define([
     };
 
     function updateIncidenceType(oEvent) {
-        
+
         let context = oEvent.getSource().getBindingContext("incidenceModel");
         let contextObj = context.getObject();
 
