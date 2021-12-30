@@ -1,7 +1,7 @@
 
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "logaligroup/employees/model/formatter" 
+    "logaligroup/employees/model/formatter"
 ], function (Controller, formatter) {
 
     function onInit() {
@@ -15,7 +15,7 @@ sap.ui.define([
         var incidenceModel = this.getView().getModel("incidenceModel");
         var odata = incidenceModel.getData();
         var index = odata.length;
-        odata.push({ index: index + 1 });
+        odata.push({ index: index + 1, _ValidateDate: false, });
         incidenceModel.refresh();
         newIncidence.bindElement("incidenceModel>/" + index);
         tableIncidence.addContent(newIncidence);
@@ -39,39 +39,61 @@ sap.ui.define([
         this._bus.publish("incidence", "onSaveIncidence", { incidenceRow: incidenceRow.sPath.replace('/', '') });
     };
 
-        function updateIncidenceCreationDate(oEvent) {
-            var context = oEvent.getSource().getBindingContext("incidenceModel");
-            var contextObj = context.getObject();
+    function updateIncidenceCreationDate(oEvent) {
+
+        let context = oEvent.getSource().getBindingContext("incidenceModel");
+        let contextObj = context.getObject();
+
+        if (!oEvent.getSource().isValidValue()) {
+            contextObj._ValidateDate = false;
+            contextObj.CreationDateState = "Error";
+        } else {
             contextObj.CreationDateX = true;
+            contextObj._ValidateDate = true;
+            contextObj.CreationDateState = "None";
         };
-    
-        function updateIncidenceReason(oEvent) {
-            var context = oEvent.getSource().getBindingContext("incidenceModel");
-            var contextObj = context.getObject();
+
+        context.getModel().refresh();
+
+    };
+
+    function updateIncidenceReason(oEvent) {
+
+        let context = oEvent.getSource().getBindingContext("incidenceModel");
+        let contextObj = context.getObject();
+
+        if (oEvent.getSource().getValue()) {
             contextObj.ReasonX = true;
+            contextObj.ReasonState = "None";
+        } else {
+            contextObj.ReasonState = "Error";
         };
-    
-        function updateIncidenceType(oEvent) {
-            var context = oEvent.getSource().getBindingContext("incidenceModel");
-            var contextObj = context.getObject();
-            contextObj.TypeX = true;
-        };
-        
-
-    var EmployeeDetails = Controller.extend("logaligroup.employees.controller.EmployeeDetails", {});
-
-    EmployeeDetails.prototype.onInit = onInit;
-    EmployeeDetails.prototype.onCreateIncidence = onCreateIncidence;
-    EmployeeDetails.prototype.onDeleteIncidence = onDeleteIncidence;
-    EmployeeDetails.prototype.Formatter = formatter;
-    EmployeeDetails.prototype.onSaveIncidence = onSaveIncidence;
-
-    EmployeeDetails.prototype.updateIncidenceCreationDate = updateIncidenceCreationDate;
-    EmployeeDetails.prototype.updateIncidenceReason = updateIncidenceReason;
-    EmployeeDetails.prototype.updateIncidenceType = updateIncidenceType;
 
 
-    return EmployeeDetails;
-}); 
-   
+
+    };
+
+            function updateIncidenceType(oEvent) {
+                var context = oEvent.getSource().getBindingContext("incidenceModel");
+                var contextObj = context.getObject();
+                contextObj.TypeX = true;
+            };
+
+
+            var EmployeeDetails = Controller.extend("logaligroup.employees.controller.EmployeeDetails", {});
+
+            EmployeeDetails.prototype.onInit = onInit;
+            EmployeeDetails.prototype.onCreateIncidence = onCreateIncidence;
+            EmployeeDetails.prototype.onDeleteIncidence = onDeleteIncidence;
+            EmployeeDetails.prototype.Formatter = formatter;
+            EmployeeDetails.prototype.onSaveIncidence = onSaveIncidence;
+
+            EmployeeDetails.prototype.updateIncidenceCreationDate = updateIncidenceCreationDate;
+            EmployeeDetails.prototype.updateIncidenceReason = updateIncidenceReason;
+            EmployeeDetails.prototype.updateIncidenceType = updateIncidenceType;
+
+
+            return EmployeeDetails;
+        });
+
 
