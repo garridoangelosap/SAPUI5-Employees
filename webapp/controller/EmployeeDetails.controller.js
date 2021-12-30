@@ -1,8 +1,9 @@
 
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "logaligroup/employees/model/formatter"
-], function (Controller, formatter) {
+    "logaligroup/employees/model/formatter",
+    "sap/m/MessageBox"
+], function (Controller, formatter, MessageBox) {
 
     function onInit() {
         this._bus = sap.ui.getCore().getEventBus();
@@ -43,10 +44,20 @@ sap.ui.define([
 
         let context = oEvent.getSource().getBindingContext("incidenceModel");
         let contextObj = context.getObject();
+        let oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
 
         if (!oEvent.getSource().isValidValue()) {
             contextObj._ValidateDate = false;
             contextObj.CreationDateState = "Error";
+             MessageBox.error(oResourceBundle.getText("errorCreationDateValue"), {
+                title: "Error",
+                onClose: null,
+                styleClass: "",
+                actions: MessageBox.Action.Close,
+                emphasizedAction: null,
+                initialFocus: null,
+                textDirection: sap.ui.core.TextDirection.Inherit
+            });
         } else {
             contextObj.CreationDateX = true;
             contextObj._ValidateDate = true;
