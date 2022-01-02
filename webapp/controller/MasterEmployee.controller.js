@@ -21,7 +21,7 @@ sap.ui.define([
             var oJSONCountries = this.getView().getModel("jsonCountries").getData();
 
             var filters = [];
-            
+
             if (oJSONCountries.EmployeeId !== "") {
 
                 filters.push(new Filter("EmployeeID", FilterOperator.EQ, oJSONCountries.EmployeeId));
@@ -43,10 +43,10 @@ sap.ui.define([
             oModel.setProperty("/CountryKey", "");
 
         };
-        
+
         function showPostalCode(oEvent) {
             var itemPressed = oEvent.getSource();
-            var oContext =  itemPressed.getBindingContext("jsonEmployees");
+            var oContext = itemPressed.getBindingContext("jsonEmployees");
             var objectContext = oContext.getObject();
 
             sap.m.MessageToast.show(objectContext.PostalCode);
@@ -61,57 +61,65 @@ sap.ui.define([
 
         };
 
-        function onHideCity(){
+        function onHideCity() {
             var oJSONModelConfig = this.getView().getModel("jsonModelConfig");
             oJSONModelConfig.setProperty("/visibleCity", false);
             oJSONModelConfig.setProperty("/visibleBtnShowCity", true);
             oJSONModelConfig.setProperty("/visibleBtnHideCity", false);
         };
-         
+
         function showOrders(oEvent) {
 
-               //Get selected Controller
-               var iconPressed = oEvent.getSource();
+            //Get selected Controller
+            var iconPressed = oEvent.getSource();
 
-           //Context from the model
-           var oContext = iconPressed.getBindingContext("odataNorthwind");
+            //Context from the model
+            var oContext = iconPressed.getBindingContext("odataNorthwind");
 
-           if (!this._oDialogOrders) {
-               this._oDialogOrders = sap.ui.xmlfragment("logaligroup.employees.fragment.DialogOrders", this);
-               this.getView().addDependent(this._oDialogOrders);
-           };
+            if (!this._oDialogOrders) {
+                this._oDialogOrders = sap.ui.xmlfragment("logaligroup.employees.fragment.DialogOrders", this);
+                this.getView().addDependent(this._oDialogOrders);
+            };
 
-           //Dialog binding to the Context to have access to the data of selected item
-           this._oDialogOrders.bindElement("odataNorthwind>" + oContext.getPath());
-           this._oDialogOrders.open();
-       };
+            //Dialog binding to the Context to have access to the data of selected item
+            this._oDialogOrders.bindElement("odataNorthwind>" + oContext.getPath());
+            this._oDialogOrders.open();
+        };
 
-       function onCloseOrders() {
-           this._oDialogOrders.close();
-       };
+        function onCloseOrders() {
+            this._oDialogOrders.close();
+        };
 
-  function showEmployee(oEvent) {
+        function showEmployee(oEvent) {
             var path = oEvent.getSource().getBindingContext("odataNorthwind").getPath();
             this._bus.publish("flexible", "showEmployee", path);
         };
-        
-        var Main = Controller.extend("logaligroup.employees.controller.MasterEmployee", {});
 
-        Main.prototype.onValidate = function () {
-            
-            var inputEmployee = this.byId("inputEmployee");
-            var valueEmployee = inputEmployee.getValue();
-
-            if (valueEmployee.length === 6) {
-                //inputEmployee.setDescription("OK");
-                this.getView().byId("labelCountry").setVisible(true);
-                this.getView().byId("slCountry").setVisible(true);
-            } else {
-                //inputEmployee.setDescription("Not OK");
-                this.getView().byId("labelCountry").setVisible(false);
-                this.getView().byId("slCountry").setVisible(false);
-            }
+        function toOrderDetails(oEvent) {
+            var orderID = oEvent.getSource().getBindingContext("odataNorthwind").getObject().OrderID;
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("RouteOrderDetails", {
+                OrderID: orderID
+            });
         };
+
+         var Main = Controller.extend("logaligroup.employees.controller.MasterEmployee", {});
+
+        //Main.prototype.onValidate = function () {
+
+        //   var inputEmployee = this.byId("inputEmployee");
+        // var valueEmployee = inputEmployee.getValue();
+
+        //  if (valueEmployee.length === 6) {
+        //inputEmployee.setDescription("OK");
+        //    this.getView().byId("labelCountry").setVisible(true);
+        //    this.getView().byId("slCountry").setVisible(true);
+        //   } else {
+        //inputEmployee.setDescription("Not OK");
+        //      this.getView().byId("labelCountry").setVisible(false);
+        //       this.getView().byId("slCountry").setVisible(false);
+        //   }
+        //  };
 
         Main.prototype.onInit = onInit;
         Main.prototype.onFilter = onFilter;
@@ -122,5 +130,6 @@ sap.ui.define([
         Main.prototype.showOrders = showOrders;
         Main.prototype.onCloseOrders = onCloseOrders;
         Main.prototype.showEmployee = showEmployee;
+        Main.prototype.toOrderDetails = toOrderDetails;
         return Main;
     });
