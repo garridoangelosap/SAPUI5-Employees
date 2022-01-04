@@ -73,20 +73,25 @@ sap.ui.define([
                 MessageBox.error(oResourceBundle.getText("fillSignature"));
             } else {
                 signaturePng = signature.getSignature().replace("data:image/png;base64,", "");
+                let objectOrder = oEvent.getSource().getBindingContext("odataNorthwind").getObject();
+                let body = {
+                    OrderId: objectOrder.OrderID.toString(),
+                    SapId: this.getOwnerComponent().SapId,
+                    EmployeeId: objectOrder.EmployeeID.toString(),
+                    MimeType: "image/png",
+                    MediaContent: signaturePng
+                };
+
+                this.getView().getModel("incidenceModel").create("/SignatureSet", body, {
+                    success: function () {
+                        MessageBox.information(oResourceBundle.getText("signatureSaved"));
+                    },
+                    error: function () {
+                        MessageBox.error(oResourceBundle.getText("signatureNotSaved"));
+                    },
+
+                });
             };
-//minuto 11 bloque9 labOdata 1ade10
-
-
-
-
-
-
-
-
-
-
-
-            }
-
+        },
     });
 }); 
