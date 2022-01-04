@@ -11,14 +11,20 @@ sap.ui.define([
 
         this.getView().bindElement({
             path: "/Orders(" + oEvent.getParameter("arguments").OrderID + ")",
-            model: "odataNorthwind"
+            model: "odataNorthwind",
+            events: {
+                dataReceived: function (oData) {
+                    _readSignature.bind(this)(oData.getParameter("data").OrderID, oData.getParameter("data").EmployeeID);
+                }.bind(this)
+            }
         });
 
         const objContext = this.getView().getModel("odataNorthwind").getContext("/Orders("
-            + oEvent.getParameter("arguments").OrderID + ")").getObject();
-        _readSignature.bind(this)(objContext.OrderID, objContext.EmployeeID);
-
-    };
+                + oEvent.getParameter("arguments").OrderID + ")").getObject();
+            if (objContext) {
+                _readSignature.bind(this)(objContext.OrderID, objContext.EmployeeID);
+            }
+        };
 
     function _readSignature(orderId, employeeId) {
 
