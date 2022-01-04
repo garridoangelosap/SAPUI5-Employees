@@ -1,8 +1,9 @@
 // @ts-nocheck
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/routing/History"
-], function (Controller, History) {
+    "sap/ui/core/routing/History",
+    "sap/m/MessageBox"
+], function (Controller, History, MessageBox) {
 
     function _onObjectMatched(oEvent) {
         this.getView().bindElement({
@@ -61,6 +62,31 @@ sap.ui.define([
                 });
                 return customListItem;
             }
-        }
+        },
+
+        onSaveSignature : function (oEvent) {
+            const signature = this.byId("signature");
+            const oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+            let signaturePng;
+
+            if (!signature.isFill()) {
+                MessageBox.error(oResourceBundle.getText("fillSignature"));
+            } else {
+                signaturePng = signature.getSignature().replace("data:image/png;base64,", "");
+            };
+//minuto 11 bloque9 labOdata 1ade10
+
+
+
+
+
+
+
+
+
+
+
+            }
+
     });
 }); 
