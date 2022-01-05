@@ -61,6 +61,7 @@ sap.ui.define([
             ],
             template: new sap.m.UploadCollectionItem({
                 documentId: "{incidenceModel>AttId}",
+                visibleEdit: false,
                 fileName: "{incidenceModel>FileName}"
             }).attachPress(this.downloadFile)
         });
@@ -168,6 +169,10 @@ sap.ui.define([
                 value: this.getView().getModel("incidenceModel").getSecurityToken()
             });
             oUplodCollection.addHeaderParameter(oCustomerHeaderToken);
+        },
+
+        onFileUploadComplete: function (oEvent) {
+            oEvent.getSource().getBinding("items").refresh();
         }
 
     });
