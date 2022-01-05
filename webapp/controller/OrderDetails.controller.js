@@ -2,8 +2,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
-    "sap/m/MessageBox"
-], function (Controller, History, MessageBox) {
+    "sap/m/MessageBox",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator",
+],
+    /**
+     * @param {typeof sap.ui.core.mvc.Controller} Controller
+     * @param {typeof sap.ui.model.Filter} Filter
+     * @param {typeof sap.ui.model.FilterOperator} FilterOperator
+     */
+    function (Controller, History, MessageBox, Filter, FilterOperator) {
 
     function _onObjectMatched(oEvent) {
 
@@ -28,7 +36,7 @@ sap.ui.define([
 
     function _readSignature(orderId, employeeId) {
 
-        //Read Signature Image  minuto 19
+        //Read Signature Image
         this.getView().getModel("incidenceModel").read("/SignatureSet(OrderId='" + orderId
             + "',SapId='" + this.getOwnerComponent().SapId
             + "',EmployeeId='" + employeeId + "')", {
@@ -39,10 +47,24 @@ sap.ui.define([
                 }
             }.bind(this),
             error: function (data) {
+
             }
         });
-    };
 
+        //Bind Files
+        this.byId("uploadCollection").bindAggregation("items", {
+            path: "incidenceModel>/FilesSet",
+            filters: [
+                new Filter("OrderId", FilterOperator.EQ, orderId),
+                new Filter("SapId", FilterOperator.EQ, this.getOwnerComponent().SapId),
+                new Filter("EmployeeId", FilterOperator.EQ, employeeId),
+            ],
+            template: new sap.m.UploadCollectionItem({
+                documentId: "{incidenceModel>AttId}",
+                fileName: "{incidenceModel>FileName}"
+            }).attachPress(this.downloadFile)
+        });
+    };
 
     return Controller.extend("logaligroup.employees.controller.OrderDetails", {
 
