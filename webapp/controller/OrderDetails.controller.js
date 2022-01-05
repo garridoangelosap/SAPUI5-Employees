@@ -125,5 +125,15 @@ sap.ui.define([
                     });
                 };
             },
-        });
+
+            onFileBeforeUpload: function (oEvent) {
+                let fileName = oEvent.getParameter("fileName");
+                let objContext = oEvent.getSource().getBindingContext("odataNorthwind").getObject();
+                let oCustomerHeaderSlug = new sap.m.UploadCollectionParameter({
+                    name: "slug",
+                    value: objContext.OrderID + ";" + this.getOwnerComponent().SapId + ";" + objContext.EmployeeID + ";" + fileName
+                });
+                oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug);
+            },
+        }); 
     }); 
